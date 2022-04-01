@@ -12,6 +12,16 @@
 
 	"workspaceFolder": "/irisdev/app",
 
+	// The next set of lines are for Codespaces
+	"forwardPorts": [
+		52773,
+		1972,
+		8080,
+		8081,
+		8888
+	],
+	"postStartCommand": "iris start iris",
+
 	// This provides the elements of the connection object which require different values when connecting to the workspace within the container,
 	// versus those in .vscode/settings.json which apply when operating locally on the workspace files.
 	// We define and use a `server` so that (a) a user-level `objectscript.conn.server` properly doesn't override us, and (b) so InterSystems
@@ -33,6 +43,19 @@
 				},
 			},
 		},
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash",
+				"icon": "terminal-bash"
+			},
+			"iris": {
+				"path": "iris",
+				"args": [
+					"session",
+					"iris"
+				]
+			}
+		}
 	},
 
 	// Add the IDs of extensions we want installed when the container is created.
